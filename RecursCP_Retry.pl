@@ -141,6 +141,7 @@ sub generateFileList {
 sub makeDestnDirs {
 	print "Creating subdirectories at destination location\n";
 	#my $create_subdirs_cmd = "/bin/cat $tempdirs| /usr/bin/tr '\\n' '\\0' | /usr/software/bin/xargs -I\{\} -0 -P $threads $mymkdir $destndir  \{\}";
+	system( "mkdir -p $destndir" );
 	my $create_subdirs_cmd = "/bin/cat $tempdirs| /usr/bin/tr '\\n' '\\0' | /usr/software/bin/xargs -I\{\} -0 -P $threads mkdir -p \{\}";
 	my( $cmd_out, $exit_status ) = &ExecCommand( $create_subdirs_cmd );
 	
