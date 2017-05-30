@@ -10,7 +10,7 @@ Syntax:
    RecursCP.pl --srcdir="/tmp/d" --destndir="/tmp/b" --threads="40"
    
 
-Default value of threads is 40, it is recommended to input the thread value to  cores count for  more parallelization.
+Default value of threads is 40, it is recommended that threads value option to  be set to maximum cores count, this will create  more parallelization.
 
 Example  to get cores details  in RHEL machine :
 -bash-4.2$ lscpu  |grep -e '^CPU(s)'
@@ -18,7 +18,11 @@ CPU(s):                16
 
 
 Testing :
-Testing performed on RHEL 6.4 (Santiago )
+Testing performed on RHEL 6.4 (Santiago ), containing 40 cores 
+perl version - 5.8.8
+script will not copy broken symlinks or links to dirs, to do that please use RecursCP_Retry.pl 
+
+
 Instructions to download and execute the tool on Linux  RHEL machine
 --------------------------------------------------------------------
 Download the zip file 'MyRecursCP.zip'
